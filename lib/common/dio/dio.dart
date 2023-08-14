@@ -1,1 +1,1 @@
-export 'initial_binding.dart';
+export 'dio_initial_provider.dart';
