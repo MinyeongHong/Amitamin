@@ -1,4 +1,4 @@
-part of 'main_page.dart';
+part of 'main_screen.dart';
 
 class _BottomNavigationBar extends StatelessWidget {
   const _BottomNavigationBar({
