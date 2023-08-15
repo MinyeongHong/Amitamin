@@ -29,12 +29,12 @@ class MainPageState extends ConsumerState<MainPage> {
         items: [
           BottomItems(
               icon: SvgPicture.asset(
-                'lib/common/assests/icon/home_icon_filled.svg',
+                'assets/icons/bottom/home_icon_filled.svg',
                 width: 24,
                 height: 24,
               ),
               activeIcon: SvgPicture.asset(
-                'lib/common/assests/icon/home_icon_filled.svg',
+                'assets/icons/bottom/home_icon_filled.svg',
                 width: 24,
                 height: 24,
               ),
@@ -46,12 +46,12 @@ class MainPageState extends ConsumerState<MainPage> {
           ),
           BottomItems(
               icon: SvgPicture.asset(
-                'lib/common/assests/icon/analysis_icon_outlined.svg',
+                'assets/icons/bottom/analysis_icon_outlined.svg',
                 width: 24,
                 height: 24,
               ),
               activeIcon: SvgPicture.asset(
-                'lib/common/assests/icon/analysis_icon_outlined.svg',
+                'assets/icons/bottom/analysis_icon_outlined.svg',
                 width: 24,
                 height: 24,
               ),
@@ -63,12 +63,12 @@ class MainPageState extends ConsumerState<MainPage> {
           ),
           BottomItems(
               icon: SvgPicture.asset(
-                'lib/common/assests/icon/my_icon_outlined.svg',
+                'assets/icons/bottom/my_icon_outlined.svg',
                 width: 24,
                 height: 24,
               ),
               activeIcon: SvgPicture.asset(
-                'lib/common/assests/icon/my_icon_outlined.svg',
+                'assets/icons/bottom/my_icon_outlined.svg',
                 width: 24,
                 height: 24,
               ),
