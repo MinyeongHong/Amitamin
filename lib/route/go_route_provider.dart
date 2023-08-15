@@ -1,7 +1,11 @@
-import 'package:amitamin/pages/pages.dart';
 import 'package:amitamin/route/named_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:amitamin/home/home.dart';
+import 'package:amitamin/analysis/analysis.dart';
+import 'package:amitamin/my/my.dart';
+import 'package:amitamin/main/main.dart';
+import 'package:amitamin/error/error.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) => goRouteList());
 
