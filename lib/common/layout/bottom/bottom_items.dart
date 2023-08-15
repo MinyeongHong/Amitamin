@@ -9,7 +9,8 @@ class BottomItems extends StatelessWidget {
     required this.icon,
     required this.activeIcon,
     this.backgroundColor = CustomColor.white,
-    required this.activeFlag,
+    required this.index,
+    required this.currentIndex,
     required this.label,
     required this.onPressed
   }) : super(key: key);
@@ -17,7 +18,8 @@ class BottomItems extends StatelessWidget {
   final SvgPicture icon;
   final SvgPicture activeIcon;
   final Color backgroundColor;
-  final bool activeFlag;
+  final int index;
+  final int currentIndex;
   final String label;
   final VoidCallback onPressed;
 
@@ -35,14 +37,14 @@ class BottomItems extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Column(
               children: [
-                activeFlag ?
+                currentIndex == index ?
                 activeIcon :
                 icon,
                 Text(
                   label,
                   style: TextStyle(
                       fontSize: 12,
-                      color: activeFlag ?
+                      color: currentIndex == index ?
                       CustomColor.primaryBlue100 :
                       CustomColor.gray
                   ),

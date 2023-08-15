@@ -3,12 +3,12 @@ part of 'main_screen.dart';
 class _BottomNavigationBar extends StatelessWidget {
   const _BottomNavigationBar({
     required this.ref,
-    required this.idx,
+    required this.index,
     Key? key,
   }) : super(key: key);
 
   final WidgetRef ref;
-  final int idx;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,8 @@ class _BottomNavigationBar extends StatelessWidget {
             width: 24,
             height: 24,
           ),
-          activeFlag: idx == 0 ? true : false,
+          index: 0,
+          currentIndex: index,
           label: '홈',
           onPressed: () {
             ref.watch(bottomIndexProvider.notifier).setIndex(0);
@@ -42,7 +43,8 @@ class _BottomNavigationBar extends StatelessWidget {
             width: 24,
             height: 24,
           ),
-          activeFlag: idx == 1 ? true : false,
+          index: 1,
+          currentIndex: index,
           label: '분석',
           onPressed: () {
             ref.watch(bottomIndexProvider.notifier).setIndex(1);
@@ -59,7 +61,8 @@ class _BottomNavigationBar extends StatelessWidget {
             width: 24,
             height: 24,
           ),
-          activeFlag: idx == 2 ? true : false,
+          index: 2,
+          currentIndex: index,
           label: '마이페이지',
           onPressed: () {
             ref.watch(bottomIndexProvider.notifier).setIndex(2);

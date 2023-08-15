@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:amitamin/common/common.dart';
@@ -19,17 +20,17 @@ class MainPageState extends ConsumerState<MainPage> {
   
   @override
   Widget build(BuildContext context) {
-    final idx = ref.watch(bottomIndexProvider);
+    final bottomIndex = ref.watch(bottomIndexProvider);
 
     return DefaultMainLayout(
       child: WillPopScope(
         onWillPop: () async {
-          // TODO : Route 관리
+          _onPressBackButton(ref, bottomIndex);
           return false;
         },
-        child: _pages[idx]
+        child: _pages[bottomIndex]
       ),
-      bottomNavigationBar: _BottomNavigationBar(ref: ref, idx: idx,),
+      bottomNavigationBar: _BottomNavigationBar(ref: ref, index: bottomIndex,),
     );
   }
 }
@@ -39,6 +40,17 @@ List<Widget> _pages = [
   AnalysisPage(),
   MyPage()
 ];
+
+void _onPressBackButton(WidgetRef ref, int idx) {
+  if(idx != 0) {
+    ref.watch(bottomIndexProvider.notifier).setIndex(0);
+    return;
+  }
+
+  if(Platform.isAndroid) {
+    onWillPopClose();
+  }
+}
 
 
 
