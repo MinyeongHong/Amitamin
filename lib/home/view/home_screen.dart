@@ -45,11 +45,10 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                           ),
                         ),
                         const Spacer(),
-                        InkWell(
-                          borderRadius: BorderRadius.circular(30),
+                        GestureDetector(
                           onTap: () {},
                           child: SvgPicture.asset(
-                            'assets/icons/home/notification.svg',
+                            'assets/icons/home/alarm_empty.svg',
                             width: 24,
                             height: 24,
                           ),
@@ -59,10 +58,13 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                   ),
                 ),
                 SizedBox(
+                  width: MediaQuery.of(context).size.width,
                   height: 77,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Row(
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      direction: Axis.horizontal,
                       children: [
                         SvgPicture.asset(
                           'assets/icons/state/state=none.svg',
@@ -70,11 +72,13 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                           height: 44,
                         ),
                         const SizedBox(width: 12,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Wrap(
+                          crossAxisAlignment: WrapCrossAlignment.start,
+                          direction: Axis.vertical,
                           children: [
-                            Row(
+                            Wrap(
+                              alignment: WrapAlignment.start,
+                              direction: Axis.horizontal,
                               children: [
                                 const Text(
                                   '오늘의 피로도는 ',
@@ -123,8 +127,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                               style: CustomText.headLine4,
                             ),
                             const Spacer(),
-                            InkWell(
-                              borderRadius: BorderRadius.circular(30),
+                            GestureDetector(
                               onTap: () {},
                               child: SvgPicture.asset(
                                 'assets/icons/home/add.svg',
@@ -136,8 +139,9 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                         ),
                         const SizedBox(height: 22,),
                         SizedBox(
+                          width: MediaQuery.of(context).size.width,
                           height: 21,
-                          child: Row(
+                          child: Stack(
                             children: [
                               Wrap(
                                 children: [
@@ -196,6 +200,40 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                           ),
                         ),
                         const SizedBox(height: 12,),
+                        Wrap(
+                          children: [
+                            customTabView(
+                                context: context,
+                                type: "",
+                                index: 0,
+                                currentIndex: tabIndex,
+                            ),
+                            customTabView(
+                              context: context,
+                              type: "",
+                              index: 1,
+                              currentIndex: tabIndex,
+                            ),
+                            customTabView(
+                              context: context,
+                              type: "",
+                              index: 2,
+                              currentIndex: tabIndex,
+                            ),
+                            customTabView(
+                              context: context,
+                              type: "",
+                              index: 3,
+                              currentIndex: tabIndex,
+                            ),
+                            customTabView(
+                              context: context,
+                              type: "",
+                              index: 4,
+                              currentIndex: tabIndex,
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),

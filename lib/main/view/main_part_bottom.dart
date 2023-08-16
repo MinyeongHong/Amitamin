@@ -16,7 +16,7 @@ class _BottomNavigationBar extends StatelessWidget {
       items: [
         BottomItems(
           icon: SvgPicture.asset(
-            'assets/icons/bottom/home_icon_filled.svg',
+            'assets/icons/bottom/home_icon_outlined.svg',
             width: 24,
             height: 24,
           ),
@@ -39,7 +39,7 @@ class _BottomNavigationBar extends StatelessWidget {
             height: 24,
           ),
           activeIcon: SvgPicture.asset(
-            'assets/icons/bottom/analysis_icon_outlined.svg',
+            'assets/icons/bottom/analysis_icon_filled.svg',
             width: 24,
             height: 24,
           ),
@@ -57,7 +57,7 @@ class _BottomNavigationBar extends StatelessWidget {
             height: 24,
           ),
           activeIcon: SvgPicture.asset(
-            'assets/icons/bottom/my_icon_outlined.svg',
+            'assets/icons/bottom/my_icon_filled.svg',
             width: 24,
             height: 24,
           ),
