@@ -52,7 +52,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                             width: 24,
                             height: 24,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -207,6 +207,16 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                                 type: "",
                                 index: 0,
                                 currentIndex: tabIndex,
+                              items: [
+                                tabViewGoalCard(
+                                    context: context,
+                                    goalId: "1",
+                                    goalType: "신체",
+                                    goalText: "목표명입니다목표명입니다목표명입니다",
+                                    alarmText: "알림 09:00",
+                                    achievementFlag: true,
+                                ),
+                              ]
                             ),
                             customTabView(
                               context: context,
