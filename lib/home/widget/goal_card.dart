@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:amitamin/common/common.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-Container tabViewGoalCard({
+Container goalCard({
   required BuildContext context,
   required String goalId,
   required String goalType,
@@ -12,9 +12,10 @@ Container tabViewGoalCard({
 }) {
   return Container(
     width: MediaQuery.of(context).size.width - 32,
+    margin: const EdgeInsets.only(bottom: 12),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),
-      color: CustomColor.physicalLight
+      color: goalMap[goalType]?['backgroundColor']
     ),
     height: 94,
     child: Padding(
@@ -27,8 +28,9 @@ Container tabViewGoalCard({
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                goalType,
-                style: const TextStyle(
+                goalMap[goalType]?['title'],
+                style: TextStyle(
+                  color: goalMap[goalType]?['titleColor'],
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                   // color:
@@ -39,11 +41,17 @@ Container tabViewGoalCard({
                 children: [
                   GestureDetector(
                     onTap: () {},
-                    child: SvgPicture.asset(
-                      'assets/icons/home/body_checked.svg',
-                      width: 24,
-                      height: 24,
-                    ),
+                    child: achievementFlag
+                        ? SvgPicture.asset(
+                            goalMap[goalType]?['checkedIcon'],
+                            width: 24,
+                            height: 24,
+                          )
+                        : SvgPicture.asset(
+                            goalMap[goalType]?['uncheckedIcon'],
+                            width: 24,
+                            height: 24,
+                          ),
                   ),
                   const SizedBox(width: 2.5,),
                   SizedBox(

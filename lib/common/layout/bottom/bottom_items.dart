@@ -27,8 +27,7 @@ class BottomItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: CustomColor.white,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(35),
+      child: GestureDetector(
         onTap: onPressed,
         child: SizedBox(
           width: 65,
