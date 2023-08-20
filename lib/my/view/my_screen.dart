@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class MyPage extends ConsumerStatefulWidget {
-  const MyPage({Key? key}) : super(key: key);
+class MyScreen extends ConsumerStatefulWidget {
+  const MyScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<MyPage> createState() => MyPageState();
+  ConsumerState<MyScreen> createState() => MyScreenState();
 }
 
-class MyPageState extends ConsumerState<MyPage> {
+class MyScreenState extends ConsumerState<MyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

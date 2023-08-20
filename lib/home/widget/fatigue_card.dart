@@ -7,15 +7,17 @@ class FatigueContainer extends StatelessWidget {
     Key? key,
     required this.fatigueId,
     required this.fatigueScore,
+    required this.voidCallback,
   }) : super(key: key);
 
   final int fatigueId;
   final String fatigueScore;
+  final VoidCallback voidCallback;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: voidCallback,
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: 77,

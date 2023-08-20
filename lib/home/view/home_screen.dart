@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:amitamin/common/common.dart';
 import 'package:amitamin/home/home.dart';
 
-class HomePage extends ConsumerStatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends ConsumerStatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<HomePage> createState() => HomePageState();
+  ConsumerState<HomeScreen> createState() => HomeScreenState();
 }
 
-class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderStateMixin {
+class HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final tabIndex = ref.watch(tabIndexProvider);
 
-    return SafeArea(
-      child: SingleChildScrollView(
+    return Material(
+      color: CustomColor.white,
+      child: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
                 FatigueContainer(
-                    fatigueId: 1,
-                    fatigueScore: 'none'
+                  fatigueId: 1,
+                  fatigueScore: 'none',
+                  voidCallback: () {
+                    context.go('/main/home/fatigueCheck');
+                  },
                 ),
                 SizedBox(
                   child: Padding(
@@ -113,64 +119,64 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                                 type: "",
                                 index: 0,
                                 currentIndex: tabIndex,
-                              items: [
-                                GoalCard(
+                                items: [
+                                  GoalCard(
+                                      goalId: "1",
+                                      goalType: "0001",
+                                      goalText: "목표명입니다목표명입니다목표명입니다",
+                                      alarmText: "알림 09:00",
+                                      achievementFlag: true
+                                  ),
+                                  GoalCard(
                                     goalId: "1",
                                     goalType: "0001",
                                     goalText: "목표명입니다목표명입니다목표명입니다",
                                     alarmText: "알림 09:00",
-                                    achievementFlag: true
-                                ),
-                                GoalCard(
-                                  goalId: "1",
-                                  goalType: "0001",
-                                  goalText: "목표명입니다목표명입니다목표명입니다",
-                                  alarmText: "알림 09:00",
-                                  achievementFlag: false,
-                                ),
-                                GoalCard(
-                                  goalId: "1",
-                                  goalType: "0002",
-                                  goalText: "목표명입니다목표명입니다목표명입니다",
-                                  alarmText: "알림 09:00",
-                                  achievementFlag: true,
-                                ),
-                                GoalCard(
-                                  goalId: "1",
-                                  goalType: "0002",
-                                  goalText: "목표명입니다목표명입니다목표명입니다",
-                                  alarmText: "알림 09:00",
-                                  achievementFlag: false,
-                                ),
-                                GoalCard(
-                                  goalId: "1",
-                                  goalType: "0003",
-                                  goalText: "목표명입니다목표명입니다목표명입니다",
-                                  alarmText: "알림 09:00",
-                                  achievementFlag: true,
-                                ),
-                                GoalCard(
-                                  goalId: "1",
-                                  goalType: "0003",
-                                  goalText: "목표명입니다목표명입니다목표명입니다",
-                                  alarmText: "알림 09:00",
-                                  achievementFlag: false,
-                                ),
-                                GoalCard(
-                                  goalId: "1",
-                                  goalType: "0004",
-                                  goalText: "목표명입니다목표명입니다목표명입니다",
-                                  alarmText: "알림 09:00",
-                                  achievementFlag: true,
-                                ),
-                                GoalCard(
-                                  goalId: "1",
-                                  goalType: "0004",
-                                  goalText: "목표명입니다목표명입니다목표명입니다",
-                                  alarmText: "알림 09:00",
-                                  achievementFlag: false,
-                                ),
-                              ]
+                                    achievementFlag: false,
+                                  ),
+                                  GoalCard(
+                                    goalId: "1",
+                                    goalType: "0002",
+                                    goalText: "목표명입니다목표명입니다목표명입니다",
+                                    alarmText: "알림 09:00",
+                                    achievementFlag: true,
+                                  ),
+                                  GoalCard(
+                                    goalId: "1",
+                                    goalType: "0002",
+                                    goalText: "목표명입니다목표명입니다목표명입니다",
+                                    alarmText: "알림 09:00",
+                                    achievementFlag: false,
+                                  ),
+                                  GoalCard(
+                                    goalId: "1",
+                                    goalType: "0003",
+                                    goalText: "목표명입니다목표명입니다목표명입니다",
+                                    alarmText: "알림 09:00",
+                                    achievementFlag: true,
+                                  ),
+                                  GoalCard(
+                                    goalId: "1",
+                                    goalType: "0003",
+                                    goalText: "목표명입니다목표명입니다목표명입니다",
+                                    alarmText: "알림 09:00",
+                                    achievementFlag: false,
+                                  ),
+                                  GoalCard(
+                                    goalId: "1",
+                                    goalType: "0004",
+                                    goalText: "목표명입니다목표명입니다목표명입니다",
+                                    alarmText: "알림 09:00",
+                                    achievementFlag: true,
+                                  ),
+                                  GoalCard(
+                                    goalId: "1",
+                                    goalType: "0004",
+                                    goalText: "목표명입니다목표명입니다목표명입니다",
+                                    alarmText: "알림 09:00",
+                                    achievementFlag: false,
+                                  ),
+                                ]
                             ),
                             CustomTabView(
                               type: "",
@@ -202,6 +208,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
             ),
           ),
         ),
+      ),
     );
   }
 }

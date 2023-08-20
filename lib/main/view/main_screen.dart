@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:amitamin/home/view/home_screen_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:amitamin/common/common.dart';
@@ -10,14 +9,14 @@ import 'package:amitamin/my/my.dart';
 
 part 'main_part_bottom.dart';
 
-class MainPage extends ConsumerStatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+class MainScreen extends ConsumerStatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<MainPage> createState() => MainPageState();
+  ConsumerState<MainScreen> createState() => MainScreenState();
 }
 
-class MainPageState extends ConsumerState<MainPage> {
+class MainScreenState extends ConsumerState<MainScreen> {
   
   @override
   Widget build(BuildContext context) {
@@ -40,17 +39,17 @@ class MainPageState extends ConsumerState<MainPage> {
           _onPressBackButton(ref, bottomIndex);
           return false;
         },
-        child: _pages[bottomIndex]
+        child: _screen[bottomIndex],
       ),
       bottomNavigationBar: _BottomNavigationBar(ref: ref, index: bottomIndex,),
     );
   }
 }
 
-List<Widget> _pages = [
-  HomePage(),
-  AnalysisPage(),
-  MyPage()
+List<Widget> _screen = [
+  HomeScreen(),
+  AnalysisScreen(),
+  MyScreen()
 ];
 
 void _onPressBackButton(WidgetRef ref, int idx) {

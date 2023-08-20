@@ -16,25 +16,32 @@ GoRouter goRouteList() {
         GoRoute(
             path: '/main',
             name: root,
-            builder: (context, state) => MainPage(key: state.pageKey,)
+            builder: (context, state) => MainScreen(key: state.pageKey,),
+            routes: [
+              GoRoute(
+                path: 'home/fatigueCheck',
+                name: fatigueCheck,
+                builder: (context, state) => FatigueCheckScreen(key: state.pageKey,),
+              ),
+          ]
         ),
         GoRoute(
             path: '/home',
             name: home,
-            builder: (context, state) => HomePage(key: state.pageKey,)
+            builder: (context, state) => HomeScreen(key: state.pageKey,)
         ),
         GoRoute(
             path: '/analysis',
             name: analysis,
-            builder: (context, state) => AnalysisPage(key: state.pageKey,)
+            builder: (context, state) => AnalysisScreen(key: state.pageKey,)
         ),
         GoRoute(
             path: '/my',
             name: my,
-            builder: (context, state) => MyPage(key: state.pageKey,)
+            builder: (context, state) => MyScreen(key: state.pageKey,)
         ),
       ],
-      errorBuilder: (context, state) => RouteErrorPage(
+      errorBuilder: (context, state) => RouteErrorScreen(
         errorMsg: state.error.toString(),
         key: state.pageKey,
       )

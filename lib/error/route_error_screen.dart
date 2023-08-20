@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class RouteErrorPage extends ConsumerStatefulWidget {
+class RouteErrorScreen extends ConsumerStatefulWidget {
   final String errorMsg;
-  const RouteErrorPage({
+  const RouteErrorScreen({
     required this.errorMsg,
     Key? key}) : super(key: key);
 
   @override
-  ConsumerState<RouteErrorPage> createState() => RouteErrorPageState();
+  ConsumerState<RouteErrorScreen> createState() => RouteErrorScreenState();
 }
 
-class RouteErrorPageState extends ConsumerState<RouteErrorPage> {
+class RouteErrorScreenState extends ConsumerState<RouteErrorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

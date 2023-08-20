@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AnalysisPage extends ConsumerStatefulWidget {
-  const AnalysisPage({Key? key}) : super(key: key);
+class AnalysisScreen extends ConsumerStatefulWidget {
+  const AnalysisScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<AnalysisPage> createState() => AnalysisPageState();
+  ConsumerState<AnalysisScreen> createState() => AnalysisScreenState();
 }
 
-class AnalysisPageState extends ConsumerState<AnalysisPage> {
+class AnalysisScreenState extends ConsumerState<AnalysisScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
