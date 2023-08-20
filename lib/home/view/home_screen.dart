@@ -50,62 +50,9 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: 77,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Wrap(
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      direction: Axis.horizontal,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/state/state=none.svg',
-                          width: 44,
-                          height: 44,
-                        ),
-                        const SizedBox(width: 12,),
-                        Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.start,
-                          direction: Axis.vertical,
-                          children: [
-                            Wrap(
-                              alignment: WrapAlignment.start,
-                              direction: Axis.horizontal,
-                              children: [
-                                const Text(
-                                  '오늘의 피로도는 ',
-                                  style: CustomText.headLine5,
-                                ),
-                                Text(
-                                    '10점',
-                                  style: TextStyle(
-                                    fontFamily: CustomText.headLine5.fontFamily,
-                                    fontSize: CustomText.headLine5.fontSize,
-                                    fontWeight: CustomText.headLine4.fontWeight,
-                                  ),
-                                ),
-                                const Text(
-                                  ' 이네요',
-                                  style: CustomText.headLine5,
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 9,),
-                            Text(
-                              '무리하지 말고 휴식을 취해보세요!',
-                              style: TextStyle(
-                                color: CustomColor.gray,
-                                fontFamily: CustomText.body6.fontFamily,
-                                fontSize: CustomText.body6.fontSize,
-                                fontWeight: CustomText.body6.fontWeight,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
+                FatigueCard(
+                    fatigueId: 1,
+                    fatigueScore: 'none'
                 ),
                 SizedBox(
                   child: Padding(
@@ -138,8 +85,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                             children: [
                               Wrap(
                                 children: [
-                                  customTabBar(
-                                    context: context,
+                                  CustomTabBar(
                                     label: '전체',
                                     index: 0,
                                     currentIndex: tabIndex,
@@ -148,8 +94,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                                     },
                                   ),
                                   const SizedBox(width: 16,),
-                                  customTabBar(
-                                    context: context,
+                                  CustomTabBar(
                                     label: '신체',
                                     index: 1,
                                     currentIndex: tabIndex,
@@ -158,8 +103,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                                     },
                                   ),
                                   const SizedBox(width: 16,),
-                                  customTabBar(
-                                    context: context,
+                                  CustomTabBar(
                                     label: '영양',
                                     index: 2,
                                     currentIndex: tabIndex,
@@ -168,8 +112,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                                     },
                                   ),
                                   const SizedBox(width: 16,),
-                                  customTabBar(
-                                    context: context,
+                                  CustomTabBar(
                                     label: '수면',
                                     index: 3,
                                     currentIndex: tabIndex,
@@ -178,8 +121,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                                     },
                                   ),
                                   const SizedBox(width: 16,),
-                                  customTabBar(
-                                    context: context,
+                                  CustomTabBar(
                                     label: '마음',
                                     index: 4,
                                     currentIndex: tabIndex,
@@ -195,70 +137,61 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                         const SizedBox(height: 12,),
                         Wrap(
                           children: [
-                            customTabView(
-                                context: context,
+                            CustomTabView(
                                 type: "",
                                 index: 0,
                                 currentIndex: tabIndex,
                               items: [
-                                goalCard(
-                                    context: context,
+                                GoalCard(
                                     goalId: "1",
                                     goalType: "0001",
                                     goalText: "목표명입니다목표명입니다목표명입니다",
                                     alarmText: "알림 09:00",
-                                    achievementFlag: true,
+                                    achievementFlag: true
                                 ),
-                                goalCard(
-                                  context: context,
+                                GoalCard(
                                   goalId: "1",
                                   goalType: "0001",
                                   goalText: "목표명입니다목표명입니다목표명입니다",
                                   alarmText: "알림 09:00",
                                   achievementFlag: false,
                                 ),
-                                goalCard(
-                                  context: context,
+                                GoalCard(
                                   goalId: "1",
                                   goalType: "0002",
                                   goalText: "목표명입니다목표명입니다목표명입니다",
                                   alarmText: "알림 09:00",
                                   achievementFlag: true,
                                 ),
-                                goalCard(
-                                  context: context,
+                                GoalCard(
                                   goalId: "1",
                                   goalType: "0002",
                                   goalText: "목표명입니다목표명입니다목표명입니다",
                                   alarmText: "알림 09:00",
                                   achievementFlag: false,
                                 ),
-                                goalCard(
-                                  context: context,
+                                GoalCard(
                                   goalId: "1",
                                   goalType: "0003",
                                   goalText: "목표명입니다목표명입니다목표명입니다",
                                   alarmText: "알림 09:00",
                                   achievementFlag: true,
                                 ),
-                                goalCard(
-                                  context: context,
+                                GoalCard(
                                   goalId: "1",
                                   goalType: "0003",
                                   goalText: "목표명입니다목표명입니다목표명입니다",
                                   alarmText: "알림 09:00",
                                   achievementFlag: false,
                                 ),
-                                goalCard(
-                                  context: context,
+                                GoalCard(
                                   goalId: "1",
                                   goalType: "0004",
                                   goalText: "목표명입니다목표명입니다목표명입니다",
                                   alarmText: "알림 09:00",
                                   achievementFlag: true,
                                 ),
-                                goalCard(
-                                  context: context,
+                                GoalCard(
                                   goalId: "1",
                                   goalType: "0004",
                                   goalText: "목표명입니다목표명입니다목표명입니다",
@@ -267,26 +200,22 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
                                 ),
                               ]
                             ),
-                            customTabView(
-                              context: context,
+                            CustomTabView(
                               type: "",
                               index: 1,
                               currentIndex: tabIndex,
                             ),
-                            customTabView(
-                              context: context,
+                            CustomTabView(
                               type: "",
                               index: 2,
                               currentIndex: tabIndex,
                             ),
-                            customTabView(
-                              context: context,
+                            CustomTabView(
                               type: "",
                               index: 3,
                               currentIndex: tabIndex,
                             ),
-                            customTabView(
-                              context: context,
+                            CustomTabView(
                               type: "",
                               index: 4,
                               currentIndex: tabIndex,
