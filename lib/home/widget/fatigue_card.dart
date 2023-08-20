@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:amitamin/common/common.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class FatigueCard extends StatelessWidget {
-  const FatigueCard({
+class FatigueContainer extends StatelessWidget {
+  const FatigueContainer({
     Key? key,
     required this.fatigueId,
     required this.fatigueScore,

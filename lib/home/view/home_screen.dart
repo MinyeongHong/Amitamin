@@ -22,35 +22,7 @@ class HomePageState extends ConsumerState<HomePage> with SingleTickerProviderSta
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
-                SizedBox(
-                  height: 51,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    child: Row(
-                      children: [
-                        Text(
-                          '11월 25일 (금)',
-                          style: TextStyle(
-                            color: CustomColor.primaryBlue100,
-                            fontSize: CustomText.headLine7.fontSize,
-                            fontWeight: CustomText.headLine7.fontWeight,
-                            fontFamily: CustomText.headLine7.fontFamily,
-                          ),
-                        ),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () {},
-                          child: SvgPicture.asset(
-                            'assets/icons/home/alarm_empty.svg',
-                            width: 24,
-                            height: 24,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                FatigueCard(
+                FatigueContainer(
                     fatigueId: 1,
                     fatigueScore: 'none'
                 ),

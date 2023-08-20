@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:amitamin/home/view/home_screen_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:amitamin/common/common.dart';
@@ -22,7 +23,18 @@ class MainPageState extends ConsumerState<MainPage> {
   Widget build(BuildContext context) {
     final bottomIndex = ref.watch(bottomIndexProvider);
 
+    final List<PreferredSizeWidget?> appbar = [
+      homeScreenAppBar(
+        context: context,
+        today: '11월 25일 (금)',
+        alarmExist: false,
+      ),
+      AppBar(),
+      AppBar()
+    ];
+
     return DefaultMainLayout(
+      appBar: appbar[bottomIndex],
       child: WillPopScope(
         onWillPop: () async {
           _onPressBackButton(ref, bottomIndex);
