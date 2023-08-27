@@ -21,7 +21,9 @@ class DefaultMainLayout extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor ?? Colors.white,
       appBar: appBar,
-      body: child,
+      body: SafeArea(
+        child: child,
+      ),
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,
     );

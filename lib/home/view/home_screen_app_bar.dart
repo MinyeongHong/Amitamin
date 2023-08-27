@@ -4,7 +4,6 @@ import 'package:amitamin/common/common.dart';
 
 PreferredSizeWidget? homeScreenAppBar({
   Key? key,
-  required BuildContext context,
   required String today,
   required bool alarmExist,
 }) {
@@ -14,14 +13,11 @@ PreferredSizeWidget? homeScreenAppBar({
       elevation: 0.0,
       backgroundColor: CustomColor.white,
       title: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.only(left: 16),
         child: Text(
           today,
-          style: TextStyle(
+          style: CustomText.headLine7.apply(
             color: CustomColor.primaryBlue100,
-            fontSize: CustomText.headLine7.fontSize,
-            fontWeight: CustomText.headLine7.fontWeight,
-            fontFamily: CustomText.headLine7.fontFamily,
           ),
         ),
       ),
@@ -30,21 +26,22 @@ PreferredSizeWidget? homeScreenAppBar({
       actions: [
         alarmExist
             ? IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(
-            'assets/icons/home/alarm_exist.svg',
-            width: 24,
-            height: 24,
-          ),
-        )
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  'assets/icons/home/alarm_exist.svg',
+                  width: 24,
+                  height: 24,
+                ),
+              )
             : IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(
-            'assets/icons/home/alarm_empty.svg',
-            width: 24,
-            height: 24,
-          ),
-        ),
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  'assets/icons/home/alarm_empty.svg',
+                  width: 24,
+                  height: 24,
+                ),
+              ),
+        const SizedBox(width: 16)
       ],
     ),
   );
