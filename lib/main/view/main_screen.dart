@@ -17,23 +17,15 @@ class MainScreen extends ConsumerStatefulWidget {
 }
 
 class MainScreenState extends ConsumerState<MainScreen> {
-  
   @override
   Widget build(BuildContext context) {
     final bottomIndex = ref.watch(bottomIndexProvider);
 
-    final List<PreferredSizeWidget?> appbar = [
-      homeScreenAppBar(
-        context: context,
-        today: '11월 25일 (금)',
-        alarmExist: false,
-      ),
-      AppBar(),
-      AppBar()
-    ];
-
     return DefaultMainLayout(
-      appBar: appbar[bottomIndex],
+      bottomNavigationBar: _BottomNavigationBar(
+        ref: ref,
+        index: bottomIndex,
+      ),
       child: WillPopScope(
         onWillPop: () async {
           _onPressBackButton(ref, bottomIndex);
@@ -41,27 +33,23 @@ class MainScreenState extends ConsumerState<MainScreen> {
         },
         child: _screen[bottomIndex],
       ),
-      bottomNavigationBar: _BottomNavigationBar(ref: ref, index: bottomIndex,),
     );
   }
 }
 
-List<Widget> _screen = [
+List<Widget> _screen = const [
   HomeScreen(),
   AnalysisScreen(),
-  MyScreen()
+  MyScreen(),
 ];
 
 void _onPressBackButton(WidgetRef ref, int idx) {
-  if(idx != 0) {
+  if (idx != 0) {
     ref.watch(bottomIndexProvider.notifier).setIndex(0);
     return;
   }
 
-  if(Platform.isAndroid) {
+  if (Platform.isAndroid) {
     onWillPopClose();
   }
 }
-
-
-
