@@ -1,0 +1,1 @@
+export 'bottom_index_provider.dart';
