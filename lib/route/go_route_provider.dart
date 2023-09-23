@@ -7,6 +7,7 @@ import 'package:amitamin/analysis/analysis.dart';
 import 'package:amitamin/my/my.dart';
 import 'package:amitamin/main/main.dart';
 import 'package:amitamin/error/error.dart';
+import 'package:amitamin/login/login.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) => goRouteList());
 
@@ -16,8 +17,13 @@ final GlobalKey<NavigatorState> shellNavKey = GlobalKey<NavigatorState>();
 GoRouter goRouteList() {
   return GoRouter(
       navigatorKey: rootNavKey,
-      initialLocation: '/home',
+      initialLocation: '/login',
       routes: [
+        GoRoute(
+            path: '/login',
+            name: login,
+            builder: (context, state) => LoginScreen(key: state.pageKey,)
+        ),
         ShellRoute(
             navigatorKey: shellNavKey,
             builder: (context, state, child) {
