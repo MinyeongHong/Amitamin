@@ -4,11 +4,13 @@ class _BottomNavigationBar extends StatelessWidget {
   const _BottomNavigationBar({
     required this.ref,
     required this.index,
+    required this.onTap,
     Key? key,
   }) : super(key: key);
 
   final WidgetRef ref;
   final int index;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class _BottomNavigationBar extends StatelessWidget {
           label: '홈',
           onPressed: () {
             ref.watch(bottomIndexProvider.notifier).setIndex(0);
+            onTap;
           },
         ),
         BottomItems(
@@ -48,6 +51,7 @@ class _BottomNavigationBar extends StatelessWidget {
           label: '분석',
           onPressed: () {
             ref.watch(bottomIndexProvider.notifier).setIndex(1);
+            onTap;
           },
         ),
         BottomItems(
@@ -66,6 +70,7 @@ class _BottomNavigationBar extends StatelessWidget {
           label: '마이페이지',
           onPressed: () {
             ref.watch(bottomIndexProvider.notifier).setIndex(2);
+            onTap;
           },
         ),
       ],
