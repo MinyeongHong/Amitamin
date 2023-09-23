@@ -1,6 +1,7 @@
 import 'package:amitamin/route/route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(
@@ -25,6 +26,14 @@ class MayAppState extends ConsumerState<MyApp> {
 
     return MaterialApp.router(
       routerConfig: router,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('ko', 'KR'),
+      ],
     );
   }
 }

@@ -29,7 +29,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvide
                   fatigueId: 1,
                   fatigueScore: 'none',
                   voidCallback: () {
-                    context.go('/main/home/fatigueCheck');
+                    context.go('/home/fatigueCheck');
                   },
                 ),
                 SizedBox(
