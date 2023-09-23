@@ -120,7 +120,8 @@ class GoalCard extends StatelessWidget {
 void _showGoalCardPopup(BuildContext context, double dx, double dy, String goalId) {
   showMenu<dynamic>(
     context: context,
-    position: RelativeRect.fromLTRB(dx, dy + 24.0, 24.0, 0.0),
+    // TODO : AppBar 높이만큼 세로길이를 빼줘야 함
+    position: RelativeRect.fromLTRB(dx, dy - 51.0, 24.0, 0.0), 
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
         Radius.circular(12.0),

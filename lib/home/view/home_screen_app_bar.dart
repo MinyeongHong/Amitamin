@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:amitamin/common/common.dart';
+import 'package:timer_builder/timer_builder.dart';
+import 'package:intl/intl.dart';
 
 PreferredSizeWidget? homeScreenAppBar({
   Key? key,
   required BuildContext context,
-  required String today,
+  String? today,
   required bool alarmExist,
 }) {
   return PreferredSize(
@@ -16,7 +18,7 @@ PreferredSizeWidget? homeScreenAppBar({
       title: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Text(
-          today,
+          today ?? DateFormat('M월 d일 (E)','ko_KR').format(DateTime.now()),
           style: TextStyle(
             color: CustomColor.primaryBlue100,
             fontSize: CustomText.headLine7.fontSize,
