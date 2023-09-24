@@ -1,3 +1,4 @@
+import 'package:amitamin/login/view/find_password_screen.dart';
 import 'package:amitamin/route/named_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,6 +8,7 @@ import 'package:amitamin/analysis/analysis.dart';
 import 'package:amitamin/my/my.dart';
 import 'package:amitamin/main/main.dart';
 import 'package:amitamin/error/error.dart';
+import 'package:amitamin/login/login.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) => goRouteList());
 
@@ -16,8 +18,21 @@ final GlobalKey<NavigatorState> shellNavKey = GlobalKey<NavigatorState>();
 GoRouter goRouteList() {
   return GoRouter(
       navigatorKey: rootNavKey,
-      initialLocation: '/home',
+      initialLocation: '/login',
       routes: [
+        GoRoute(
+          path: '/login',
+          name: login,
+          builder: (context, state) => LoginScreen(key: state.pageKey,),
+          routes: [
+            GoRoute(
+              parentNavigatorKey: rootNavKey,
+              path: 'findPassword',
+              name: findPassword,
+              builder: (context, state) => FindPasswordScreen(key: state.pageKey,),
+            ),
+          ]
+        ),
         ShellRoute(
             navigatorKey: shellNavKey,
             builder: (context, state, child) {
