@@ -36,17 +36,17 @@ class MainScreenState extends ConsumerState<MainScreen> {
 
     return DefaultMainLayout(
       appBar: appbar[bottomIndex],
+      bottomNavigationBar: MainBottomNavigationBar(
+        ref: ref,
+        index: bottomIndex,
+        onTap: () => _selectedIndex(context, bottomIndex),
+      ),
       child: WillPopScope(
         onWillPop: () async {
           _onPressBackButton(ref, bottomIndex);
           return false;
         },
         child: widget.child,
-      ),
-      bottomNavigationBar: _BottomNavigationBar(
-        ref: ref,
-        index: bottomIndex,
-        onTap: () => _selectedIndex(context, bottomIndex),
       ),
     );
   }

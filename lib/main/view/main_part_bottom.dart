@@ -1,7 +1,7 @@
 part of 'main_screen.dart';
 
-class _BottomNavigationBar extends StatelessWidget {
-  const _BottomNavigationBar({
+class MainBottomNavigationBar extends StatelessWidget {
+  const MainBottomNavigationBar({
     required this.ref,
     required this.index,
     required this.onTap,

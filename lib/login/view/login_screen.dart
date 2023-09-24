@@ -41,7 +41,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                   ),
                   const SizedBox(height: 40,),
                   OutlinedInput(
-                    onChanged: (String id) {},
+                    onChanged: (String email) {},
                     hintText: '이메일을 입력하세요',
                     keyboardType: TextInputType.emailAddress,
                   ),
@@ -100,6 +100,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                       InkWell(
                         onTap: () {
                           // 비밀번호 찾기 화면 이동
+                          context.go('/login/findPassword');
                         },
                         child: Text(
                           "비밀번호 찾기",
