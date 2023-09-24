@@ -5,3 +5,6 @@ const String my = 'my';
 const String fatigueCheck = 'fatigueCheck';
 const String login = 'login';
 const String findPassword = 'findPassword';
+const String registerFirstStep = 'registerFirstStep';
+const String registerSecondStep = 'registerSecondStep';
+const String registerThirdStep = 'registerThirdStep';

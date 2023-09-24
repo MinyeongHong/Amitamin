@@ -9,6 +9,7 @@ import 'package:amitamin/my/my.dart';
 import 'package:amitamin/main/main.dart';
 import 'package:amitamin/error/error.dart';
 import 'package:amitamin/login/login.dart';
+import 'package:amitamin/register/register.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) => goRouteList());
 
@@ -30,6 +31,25 @@ GoRouter goRouteList() {
               path: 'findPassword',
               name: findPassword,
               builder: (context, state) => FindPasswordScreen(key: state.pageKey,),
+            ),
+          ]
+        ),
+        GoRoute(
+          path: '/registerFirstStep',
+          name: registerFirstStep,
+          builder: (context, state) => RegisterFirstStepScreen(key: state.pageKey,),
+          routes: [
+            GoRoute(
+              path: 'registerSecondStep',
+              name: registerSecondStep,
+              builder: (context, state) => RegisterSecondStepScreen(key: state.pageKey,),
+              routes: [
+                GoRoute(
+                  path: 'registerThirdStep',
+                  name: registerThirdStep,
+                  builder: (context, state) => RegisterThirdStepScreen(key: state.pageKey,),
+                ),
+              ]
             ),
           ]
         ),
