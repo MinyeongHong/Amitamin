@@ -49,7 +49,7 @@ class FindPasswordScreenState extends ConsumerState<FindPasswordScreen> {
                   const SizedBox(height: 12,),
                   BlueTextButton(
                     onPressed: () {
-                      // TODO : 로그인 로직 추가
+                      // TODO : 비밀번호 찾기 로직 추가
                       
                     },
                     text: "임시 비밀번호 발급",

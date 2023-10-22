@@ -84,7 +84,8 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                       const Spacer(),
                       InkWell(
                         onTap: () {
-                          // TODO : 회원가입 이동
+                          // 비밀번호 찾기 화면 이동
+                          context.go('/registerFirstStep');
                         },
                         child: Text(
                           "회원가입",

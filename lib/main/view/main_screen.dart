@@ -2,13 +2,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:amitamin/common/common.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:amitamin/home/home.dart';
-import 'package:amitamin/analysis/analysis.dart';
-import 'package:amitamin/my/my.dart';
 import 'package:go_router/go_router.dart';
-
-part 'main_part_bottom.dart';
+import './main_bottom_navigation_bar.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   const MainScreen({Key? key, required this.child}) : super(key: key);
