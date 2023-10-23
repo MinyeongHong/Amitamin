@@ -129,7 +129,7 @@ class FatigueCheckScreenState extends ConsumerState<FatigueCheckScreen> {
                               for(int i=0;i<10;i++)
                                 Container(
                                   height: 16,
-                                  width: (score >= ((width - 60) / 10) * (i+1)) ? ((width - 60) / 10) : 0,
+                                  width: (score - ((width - 60) / 10) * i).clamp(0, ((width - 60) / 10)),
                                   margin: EdgeInsets.only(top: 9, right: (i < 9) ? 2.0 : 0.0),
                                   decoration: BoxDecoration(
                                     borderRadius: i == 0 ?
